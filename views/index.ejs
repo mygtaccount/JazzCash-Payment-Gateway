@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>JazzCash Integration</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Product: <%= product.name %>
+    </h1>
+    <p>Price: PKR <%= product.price / 100 %>
+    </p>
+    <form action="/checkout" method="POST">
+      <input type="hidden" name="amount" value="<%= product.price %>">
+      <input type="hidden" name="billReference" value="ORDER123">
+      <input type="hidden" name="productDescription" value="Sample Product">
+      <button type="submit">Pay with JazzCash</button>
+    </form>
+  </div>
+</body>
+
+</html>
